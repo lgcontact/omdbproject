@@ -11,4 +11,4 @@ Capstone project for Python for Everybody course, practising web access, databas
 
 5. Visualisation 3: omrt.py (which creates a seaborn density plot after making a pandas dataframe)
 
-It was fun getting to know all these tools; of course there is lots more functionality and prettification I could do, and many things I could do better. I look forward to becoming more confident in building relational tables to model the data better, but this is all for now.
+It was fun getting to know all these tools; of course there is lots more functionality and prettification of the visualisations I could do, and many programming things I could do better. I look forward to becoming more confident in building relational tables to model the data better, but this is all for now.
