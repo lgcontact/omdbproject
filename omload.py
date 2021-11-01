@@ -56,7 +56,10 @@ cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Omdbdata;')
 cur.execute('''CREATE TABLE Omdbdata (
     id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-title TEXT, year TEXT, rated TEXT, released TEXT, runtime TEXT, genre TEXT, director TEXT, writer TEXT, actors TEXT, plotlong TEXT, language  TEXT, country TEXT, awards TEXT, poster URL, imdbrating REAL, rtrating REAL, mcrating REAL, imdbid TEXT, type TEXT, dvd TEXT, boxoffice TEXT, production TEXT, website URL)
+title TEXT, year TEXT, rated TEXT, released TEXT, runtime TEXT, genre TEXT, director TEXT, 
+writer TEXT, actors TEXT, plotlong TEXT, language  TEXT, country TEXT, awards TEXT, poster URL, 
+imdbrating REAL, rtrating REAL, mcrating REAL, imdbid TEXT, type TEXT, dvd TEXT, boxoffice TEXT, 
+production TEXT, website URL)
 ''')
 
 # Ignore SSL certificate errors
@@ -128,9 +131,11 @@ for row in fh:
     print(imdbid)
     print(runtime)
     
-    conn.execute('''INSERT INTO Omdbdata (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )''', (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, qtype, dvd, boxoffice, production, website) )
+    conn.execute('''INSERT INTO Omdbdata (title, year, rated, released, runtime, genre, director, 
+    writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, 
+    imdbid, type, dvd, boxoffice, production, website) 
+    VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )''', (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, qtype, dvd, boxoffice, production, website) )
 
-    #trying to troubleshoot with shorter insert, but no solution yet
     conn.commit()
 
 print("Done")
